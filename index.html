@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
-   
+
   <script src="jquery.min.js"></script>
   <script src="angular.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -36,6 +36,7 @@
     .input-group .form-control { height: auto !important; font-weight: 100 !important; }
     .input-group-addon { min-width: 64px; background-color: #fff; }
     .btn-default:focus { background-color: #D9EDF7; border-color: #D9EDF7; }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -64,8 +65,8 @@
     </div>
   </div>
 
-  
-  
+
+
 
   <div id="ContentPanel" style="display: none;">
     <div ng-app="appNAICS2012">
@@ -86,7 +87,7 @@
                       <td class="font-size-1_5em">NAICS 2012 6-digit Codes</td>
 
                     </tr>
-                    
+
                   </table>
                 </div>
                 <div class="panel-body">
@@ -106,7 +107,7 @@
                       <button ng-click="(showMenuPanel = true)" class="btn btn-default">&#9776;</button>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
-                    <td class="font-size-1_2em" style="padding:0px;">NAICS 2012 6-digit Codes</td>
+                    <td class="font-size-1_2em" style="padding: 0px;">NAICS 2012 6-digit Codes</td>
                   </tr>
                 </table>
               </div>
@@ -320,8 +321,20 @@
       };
     });
   </script>
-    <script>
-     
+  <script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      document.addEventListener("backbutton", function (e) {
+        if ($.mobile.activePage.is('#index')) {
+          e.preventDefault();
+          navigator.app.exitApp();
+        }
+        else {
+          navigator.app.backHistory()
+        }
+      }, false);
+    }
 
   </script>
 </body>
