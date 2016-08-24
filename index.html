@@ -41,7 +41,7 @@
   </style>
 </head>
 <body class="background-color-blue">
-   <div>1.0.3</div>
+   <div>1.0.4</div>
   <div id="PreloaderPanel">
     <br />
     <div class="container">
@@ -73,7 +73,7 @@
      
       <div class="container">
         <div ng-controller="NAICS2012Controller">
-          <div ng-show="(showMenuPanel == true)">
+          <div id="MenuPanel" ng-show="(showMenuPanel == true)">
           
             <br />
             <div class="container">
@@ -82,7 +82,7 @@
                   <table>
                     <tr>
                       <td>
-                        <button ng-click="(showMenuPanel = false)" class="btn btn-default">X</button>
+                        <button id="ShowMenubutton" ng-click="(showMenuPanel = false)" class="btn btn-default">X</button>
                       </td>
                       <td>&nbsp;&nbsp;&nbsp;</td>
                       <td class="font-size-1_5em">NAICS 2012 6-digit Codes</td>
@@ -259,8 +259,13 @@
 
     function onBackKeyDown()
     {
-      $("#ShowMenubutton").click();
+      
+      if ($("#MenuPanel").is(":visible")) {
+        $("#ShowMenubutton").click();
+        return;
+      }
 
+      
     }
   </script>
 </body>
