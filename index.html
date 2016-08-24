@@ -19,11 +19,8 @@
     .yellow { background-color: #FFFF00; color: #000000; }
     .blue { background-color: #548DD4; color: #FFFFFF; }
     .chronic { background-color: #FFFFFF; color: #000000; }
-
     .btn-block { text-align: left; white-space: normal; }
-
     .descHazLabel { width: 50px; display: inline-block; }
-
     .background-color-blue { background-color: #D9EDF7; }
     .background-color-green { background-color: #DFF0D8; }
     .background-color-white { background-color: #FFFFFF; }
@@ -54,12 +51,14 @@
           <h1 class="text-center" style="font-size: 2em !important">NAICS 2012</h1>
           <h1 class="text-center" style="font-size: 1.5em !important">6-digit</h1>
           <br />
-          <p class="text-center">This app uses the Census Bureau Data but is<br />not endorsed or certified by the Census Bureau.</p>
+          <p class="text-center">This app uses the Census Bureau Data but is not endorsed or certified by the Census Bureau.</p>
           <br />
           <div class="loader">
             <p>
             </p>
           </div>
+          <hr />
+          <p class="font-size-1_5em text-center">App Developer<br />zandercodemonkey @gmail.com</p>
         </div>
       </div>
     </div>
@@ -85,15 +84,14 @@
                       </td>
                       <td>&nbsp;&nbsp;&nbsp;</td>
                       <td class="font-size-1_5em">NAICS 2012 6-digit Codes</td>
-
                     </tr>
-
                   </table>
                 </div>
                 <div class="panel-body">
-                  <p class="font-size-1_5em text-center">North American Industry Classification System (NAICS)</p>
-                  <p class="font-size-1_5em text-center">Application Developer<br />zandercodemonkey@gmail.com</p>
-                  <p class="font-size-1_0em text-center">This app uses the Census Bureau Data but is<br />not endorsed or certified by the Census Bureau.</p>
+                  <p>The North American Industry Classification System or NAICS used by business and government to classify business establishments according to type of economic activity (process of production) in Canada, Mexico, and the United States of America.</p>
+                  <p class="font-size-1_0em">*This app uses the Census Bureau Data but is not endorsed or certified by the Census Bureau.</p>
+                  <hr />
+                  <p class="font-size-1_5em text-center">App Developer<br />zandercodemonkey @gmail.com</p>
                 </div>
               </div>
             </div>
@@ -283,7 +281,7 @@
           $("#ContentPanel").show();
           $("#PreloaderPanel").hide();
           $scope.automate();
-        }, 1);
+        }, 5000);
 
       };
       $scope.setSubSector = function (e, v) {
@@ -328,10 +326,11 @@
       document.addEventListener("backbutton", function (e) {
         if ($.mobile.activePage.is('#index')) {
           e.preventDefault();
-          navigator.app.exitApp();
+          //navigator.app.exitApp();
         }
         else {
-          navigator.app.backHistory()
+
+          //navigator.app.backHistory()
         }
       }, false);
     }
