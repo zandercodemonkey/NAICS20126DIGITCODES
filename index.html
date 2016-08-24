@@ -147,7 +147,7 @@
                   <table>
                     <tr>
                       <td>
-                        <button ng-click="setSector()" class="btn btn-default">X</button>
+                        <button id="CloseSubSectorButton" ng-click="setSector()" class="btn btn-default">X</button>
                       </td>
                       <td>&nbsp;&nbsp;&nbsp;</td>
                       <td>
@@ -174,7 +174,7 @@
                     <table>
                       <tr>
                         <td>
-                          <button class="btn btn-default" ng-click="setSubSector(s.sector,'')">X</button></td>
+                          <button id="CloseSubSectorDetailButton" class="btn btn-default" ng-click="setSubSector(s.sector,'')">X</button></td>
                         <td>&nbsp;&nbsp;&nbsp;</td>
                         <td>{{s.code}} - {{s.title}}</td>
                       </tr>
@@ -265,7 +265,18 @@
         return;
       }
 
-      
+      if ($("#SubSectorPanel").is(":visible")) {
+        $("#CloseSubSectorButton").click();
+        return;
+      }
+
+      if ($("#SubSectorDetailPanel").is(":visible")) {
+        $("#CloseSubSectorDetailButton").click();
+        return;
+      }
+
+
+
     }
   </script>
 </body>
