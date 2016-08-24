@@ -218,11 +218,11 @@
       function onDeviceReady() {
         document.addEventListener("backbutton", function (e) {
           if ($.mobile.activePage.is('#index')) {
-            e.preventDefault();
+           
             $("#SectorPanel").hide();
             $("#SubSectorPanel").hide();
             $("#SubSectorDetailPanel").show();
-
+            e.preventDefault();
             //navigator.app.exitApp();
           }
           else {
