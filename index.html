@@ -325,8 +325,9 @@
     function onDeviceReady() {
       document.addEventListener("backbutton", function (e) {
         if ($.mobile.activePage.is('#index')) {
-          e.preventDefault();
           alert("mobile active Page is index");
+          e.preventDefault();
+          
           //navigator.app.exitApp();
         }
         else {
