@@ -41,7 +41,7 @@
   </style>
 </head>
 <body class="background-color-blue">
-   <div>1.0.0</div>
+   <div>1.0.2</div>
   <div id="PreloaderPanel">
     <br />
     <div class="container">
@@ -245,25 +245,29 @@
       $scope.HideKeyBoard = function (v) { $("button:first", $("#" + v)).focus(); };
 
 
+      document.addEventListener("deviceready", onDeviceReady(), false);
+
+      function onDeviceReady() {
+
+        
+        $scope.$apply(function () {
+          document.addEventListener("backbutton", onBackKeyDown, true);
+        });
+
+
+      }
+
+      function onBackKeyDown() {
+        $scope.showMenuPanel = false;
+
+      }
+
+
     }]);
     myApp.directive('ngEnter', function () { return function (scope, element, attrs) { element.bind("keydown keypress", function (event) { if (event.which === 13) { scope.$apply(function () { scope.$eval(attrs.ngEnter, { $event: event }); }); event.preventDefault(); } }); }; });
   </script>
   <script>
-    document.addEventListener("deviceready", onDeviceReady(), false);
-
-    function onDeviceReady() {
-
-      document.addEventListener("backbutton", onBackKeyDown, true);
-
-    }
-
-    function onBackKeyDown() {
-      alert('Back Button Pressed');
-      resp = confirm("If you use Home key to exit, the App will remain active. Still want to Quit?");
-      if (resp === true) {
-        navigator.app.exitApp();
-      }
-    }
+    
   </script>
 </body>
 </html>
