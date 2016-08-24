@@ -242,23 +242,26 @@
       $scope.automate = function () { if (!$scope.automated) { $("#Sector21").click(); $("#SubSector212299").click(); $scope.automated = true; } }
       $scope.HideKeyBoard = function (v) { $("button:first", $("#" + v)).focus(); };
 
-      document.addEventListener("deviceready", onDeviceReady, false);
-
-      function onDeviceReady() {
-        $scope.$apply(function () {
-          alert('device is ready');
-          document.addEventListener("backbutton", function (e) {
-            alert("aaaaa");
-            e.preventDefault();
-          }, false);
-        });
-      }
-
-
 
     }]);
     myApp.directive('ngEnter', function () { return function (scope, element, attrs) { element.bind("keydown keypress", function (event) { if (event.which === 13) { scope.$apply(function () { scope.$eval(attrs.ngEnter, { $event: event }); }); event.preventDefault(); } }); }; });
   </script>
+  <script>
+    document.addEventListener("deviceready", onDeviceReady(), false);
 
+    function onDeviceReady() {
+
+      document.addEventListener("backbutton", onBackKeyDown, true);
+
+    }
+
+    function onBackKeyDown() {
+      alert('Back Button Pressed');
+      resp = confirm("If you use Home key to exit, the App will remain active. Still want to Quit?");
+      if (resp === true) {
+        navigator.app.exitApp();
+      }
+    }
+  </script>
 </body>
 </html>
