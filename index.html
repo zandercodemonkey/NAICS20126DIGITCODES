@@ -74,7 +74,7 @@
       <div class="container">
         <div ng-controller="NAICS2012Controller">
           <div ng-show="(showMenuPanel == true)">
-            
+          
             <br />
             <div class="container">
               <div class="panel  panel-default ">
@@ -104,7 +104,7 @@
                 <table>
                   <tr>
                     <td>
-                      <button ng-click="(showMenuPanel = true)" class="btn btn-default">&#9776;</button>
+                      <button id="ShowMenubutton" ng-click="(showMenuPanel = true)" class="btn btn-default">&#9776;</button>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td class="font-size-1_2em" style="padding: 0px;">NAICS 2012 6-digit Codes</td>
@@ -245,29 +245,23 @@
       $scope.HideKeyBoard = function (v) { $("button:first", $("#" + v)).focus(); };
 
 
-      document.addEventListener("deviceready", onDeviceReady(), false);
-
-      function onDeviceReady() {
-
-        
-        $scope.$apply(function () {
-          document.addEventListener("backbutton", onBackKeyDown, true);
-        });
-
-
-      }
-
-      function onBackKeyDown() {
-        
-
-      }
-
-
     }]);
     myApp.directive('ngEnter', function () { return function (scope, element, attrs) { element.bind("keydown keypress", function (event) { if (event.which === 13) { scope.$apply(function () { scope.$eval(attrs.ngEnter, { $event: event }); }); event.preventDefault(); } }); }; });
   </script>
   <script>
-    
+    document.addEventListener("deviceready", onDeviceReady(), false);
+
+    function onDeviceReady() {
+
+      document.addEventListener("backbutton", onBackKeyDown, true);
+
+    }
+
+    function onBackKeyDown()
+    {
+      $("#ShowMenubutton").click();
+
+    }
   </script>
 </body>
 </html>
