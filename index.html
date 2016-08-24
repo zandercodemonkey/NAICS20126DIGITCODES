@@ -320,22 +320,22 @@
     });
   </script>
   <script>
-    document.addEventListener("deviceready", onDeviceReady, false);
+    //document.addEventListener("deviceready", onDeviceReady, false);
 
-    function onDeviceReady() {
-      document.addEventListener("backbutton", function (e) {
-        if ($.mobile.activePage.is('#index')) {
-          alert("mobile active Page is index");
-          e.preventDefault();
+    //function onDeviceReady() {
+    //  document.addEventListener("backbutton", function (e) {
+    //    if ($.mobile.activePage.is('#index')) {
+    //      alert("mobile active Page is index");
+    //      e.preventDefault();
           
-          //navigator.app.exitApp();
-        }
-        else {
-          alert("default");
-          //navigator.app.backHistory()
-        }
-      }, false);
-    }
+    //      //navigator.app.exitApp();
+    //    }
+    //    else {
+    //      alert("default");
+    //      //navigator.app.backHistory()
+    //    }
+    //  }, false);
+    //}
 
   </script>
 </body>
