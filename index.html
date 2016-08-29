@@ -97,7 +97,7 @@
                 <table style="width:100%;">
                   <tr>
                     <td><img alt="" width="48" height="48" src="icon.png" /></td>
-                    <td class="font-size-1_2em" style="padding: 0px;">NAICS 2012 6-digit Codes</td>
+                    <td class="font-size-1_5em" style="padding: 0px;">NAICS 2012 6-digit Codes</td>
                     <td class="text-right">
                       <button id="ShowMenuButton" ng-click="(showMenuPanel = true)" class="btn btn-default">About</button>
                     </td>
@@ -105,22 +105,12 @@
                 </table>
               </div>
             </div>
-
-
-
             <div id="SectorPanel">
               <div class="panel panel-default">
                 <div class="panel-heading"></div>
                 <div class="panel-body">
                   <input ng-enter="HideKeyBoard('SectorButtonList')" placeholder="search sector" ng-model="filterSectorText" type="text" class="form-control input-lg" />
                   <hr />
-
-
-
-
-
-
-
                   <div id="SectorButtonList" ng-show="true" class="input-group" ng-repeat="s in sector | filter:filterSector(filterSectorText)">
                     <span class="input-group-addon"
                       ng-click="setSubSector(s.id,s.Description)">{{s.id}}</span>
@@ -134,7 +124,6 @@
               </div>
             </div>
             <div id="SubSectorPanel">
-
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <table>
