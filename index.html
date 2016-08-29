@@ -94,13 +94,13 @@
           <div ng-show="(showMenuPanel == false)">
             <div class="panel panel-default" ng-show="(showHeader == true)">
               <div class="panel-body">
-                <table>
+                <table style="width:100%;">
                   <tr>
-                    <td>
-                      <button id="ShowMenubutton" ng-click="(showMenuPanel = true)" class="btn btn-default">&#9776;</button>
-                    </td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><img alt="" width="48" height="48" src="icon.png" /></td>
                     <td class="font-size-1_2em" style="padding: 0px;">NAICS 2012 6-digit Codes</td>
+                    <td class="text-right">
+                      <button id="ShowMenuButton" ng-click="(showMenuPanel = true)" class="btn btn-default">About</button>
+                    </td>
                   </tr>
                 </table>
               </div>
